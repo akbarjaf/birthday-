@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To The Love of My Life ❤️</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Quicksand:wght@300;500&display=swap');
+        
+        body {
+            font-family: 'Quicksand', sans-serif;
+            text-align: center;
+            background: #fdf2f5;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #5e3a4d;
+            /* Removed overflow: hidden to enable scrolling */
+        }
+
+        .container {
+            max-width: 600px;
+            padding: 40px;
+            position: relative;
+            margin: 40px 0; /* Added margin to ensure space for scrolling */
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5em;
+            margin: 0;
+            background: linear-gradient(45deg, #ff6b8b, #ff8e53);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: fadeIn 2s, floatTitle 4s ease-in-out infinite;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin: 30px 0;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(255, 105, 140, 0.1);
+            position: relative;
+            animation: slideUp 1.5s ease;
+        }
+
+        p::before {
+            content: "";
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border: 2px dashed #ff8e53;
+            border-radius: 18px;
+            pointer-events: none;
+            opacity: 0.5;
+            animation: rotateBorder 20s linear infinite;
+        }
+
+        .heart {
+            font-size: 1.5em;
+            color: #ff6b8b;
+            display: inline-block;
+            animation: beat 1.3s ease infinite;
+        }
+
+        .signature {
+            font-family: 'Playfair Display', serif;
+            font-size: 2em;
+            margin-top: 20px;
+            color: #ff6b8b;
+            opacity: 0;
+            animation: fadeIn 3s 2s forwards;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes floatTitle {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+
+        @keyframes beat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            40% { transform: scale(0.9); }
+            60% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes rotateBorder {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Floating Petals */
+        .petals {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .petal {
+            position: absolute;
+            font-size: 20px;
+            color: rgba(255, 182, 193, 0.7);
+            animation: float-petal 15s linear infinite;
+        }
+
+        @keyframes float-petal {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            20% { opacity: 0.7; }
+            100% { transform: translateY(-20vh) rotate(600deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Petals -->
+    <div class="petals" id="petals-container"></div>
+
+    <div class="container">
+        <h1>Happiest birthday to my only favourite person <span class="heart">❤️</span></h1>
+        
+ I know it's your birthday, but really I'm the lucky one—because the greatest gift of my life is you. Thank your parents for me!
+
+From the day you walked into my life, you made it beautiful. I never knew I'd be so dependent on someone for my happiness, for my peace.
+
+You are the reason I smile. You are the reason I laugh. You are the reason I feel alive—you make me feel so alive, Naziha. I swear, I never knew I could love someone this much.
+
+Every time I look at you and wonder how can someone be so perfect. Your smile lights up my darkest night, and your eyes—God your eyes—are the prettiest I've ever seen. They sparkle more than stars right . No one in this world compares to you. Your beauty takes my breath away there's no one not even hoors or moon that can come close to your beauty
+
+I'm so grateful to have you in my life. You're the best thing that's ever happened to me. You gave me the best moments of my life. I'm so thankful to you for everything you do for me, for being there for me, for loving me the way you do.
+
+I love you more than words can say. And I just wanted you to know that no matter how far we are, or how crazy life gets, or how big our arguments get—I'll always love you.
+            <span class="heart">❤️</span>
+        </p>
+
+        <div class="signature"></div>
+    </div>
+
+    <script>
+        // Create floating petals
+        function createPetals() {
+            const container = document.getElementById('petals-container');
+            const petals = ['❀', '✿', '🌸', '💮', '🏵️'];
+            
+            for (let i = 0; i < 25; i++) {
+                const petal = document.createElement('div');
+                petal.className = 'petal';
+                petal.innerHTML = petals[Math.floor(Math.random() * petals.length)];
+                petal.style.left = Math.random() * 100 + 'vw';
+                petal.style.animationDuration = 8 + Math.random() * 12 + 's';
+                petal.style.fontSize = 15 + Math.random() * 15 + 'px';
+                petal.style.opacity = 0.3 + Math.random() * 0.5;
+                container.appendChild(petal);
+            }
+        }
+
+        window.onload = createPetals;
+    </script>
+</body>
+</html>
